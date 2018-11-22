@@ -57,6 +57,13 @@ public class Pathfinder {
 			//Post-ride walking
 			WalkingActivity postRide = checkWalkinOption(findStationCoordinatesByName(closestEndStation), endX);
 			
+			Route tempRoute = new Route();
+			tempRoute.getActivities().add(preRide);
+			tempRoute.getActivities().add(temp);
+			tempRoute.getActivities().add(postRide);
+			
+			routes.add(tempRoute);
+			
 		}
 		
 		BusStation startStation = DataPool.getInstance().getBusStations().get(closestStartStation);
@@ -77,6 +84,13 @@ public class Pathfinder {
 		timeFromEndStationToEndPoint = distanceFromEndStationToEndPoint/walkingSpeed;
 		
 		
+		for(int i = 0; i < routes.size(); i++) {
+			
+			for(int j = 0; j < routes.get(i).getActivities().size(); j++) {
+			
+					routes.get(i).getActivities().get(j).toString();
+			}
+		}
 	}
 	
 	public BusRideActivity busRideCalculations(String lineName, String startStation, String endStation) {

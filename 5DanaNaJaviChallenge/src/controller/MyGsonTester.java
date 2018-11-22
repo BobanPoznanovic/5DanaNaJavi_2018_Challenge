@@ -140,7 +140,7 @@ public class MyGsonTester {
 			CoordinatesGPS newFaks = new CoordinatesGPS(lat2, lon2);
 			
 			pathfinder.checkForRoute(myNewCoord, newFaks, startTime);
-			System.out.println(startTime);
+			//System.out.println(startTime);
 			
 			
 			
